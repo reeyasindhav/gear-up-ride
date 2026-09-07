@@ -10,33 +10,296 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PressRouteImport } from './routes/press'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as BlogBlogIdRouteImport } from './routes/blog/$blogId'
+import { Route as CommunityIndexRouteImport } from './routes/community/index'
+import { Route as GearIndexRouteImport } from './routes/gear/index'
+import { Route as GearGearIdRouteImport } from './routes/gear/$gearId'
+import { Route as ProfileIndexRouteImport } from './routes/profile/index'
+import { Route as RidesIndexRouteImport } from './routes/rides/index'
+import { Route as RoutesIndexRouteImport } from './routes/routes/index'
+import { Route as RoutesRouteIdRouteImport } from './routes/routes/$routeId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PressRoute = PressRouteImport.update({
+  id: '/press',
+  path: '/press',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogBlogIdRoute = BlogBlogIdRouteImport.update({
+  id: '/$blogId',
+  path: '/$blogId',
+  getParentRoute: () => BlogRoute,
+} as any)
+const CommunityIndexRoute = CommunityIndexRouteImport.update({
+  id: '/community/',
+  path: '/community/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GearIndexRoute = GearIndexRouteImport.update({
+  id: '/gear/',
+  path: '/gear/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GearGearIdRoute = GearGearIdRouteImport.update({
+  id: '/gear/$gearId',
+  path: '/gear/$gearId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileIndexRoute = ProfileIndexRouteImport.update({
+  id: '/profile/',
+  path: '/profile/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RidesIndexRoute = RidesIndexRouteImport.update({
+  id: '/rides/',
+  path: '/rides/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoutesIndexRoute = RoutesIndexRouteImport.update({
+  id: '/routes/',
+  path: '/routes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoutesRouteIdRoute = RoutesRouteIdRouteImport.update({
+  id: '/routes/$routeId',
+  path: '/routes/$routeId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/dashboard': typeof DashboardRoute
+  '/help': typeof HelpRoute
+  '/login': typeof LoginRoute
+  '/press': typeof PressRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
+  '/blog/$blogId': typeof BlogBlogIdRoute
+  '/gear/$gearId': typeof GearGearIdRoute
+  '/routes/$routeId': typeof RoutesRouteIdRoute
+  '/community/': typeof CommunityIndexRoute
+  '/gear/': typeof GearIndexRoute
+  '/profile/': typeof ProfileIndexRoute
+  '/rides/': typeof RidesIndexRoute
+  '/routes/': typeof RoutesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/dashboard': typeof DashboardRoute
+  '/help': typeof HelpRoute
+  '/login': typeof LoginRoute
+  '/press': typeof PressRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
+  '/blog/$blogId': typeof BlogBlogIdRoute
+  '/gear/$gearId': typeof GearGearIdRoute
+  '/routes/$routeId': typeof RoutesRouteIdRoute
+  '/community': typeof CommunityIndexRoute
+  '/gear': typeof GearIndexRoute
+  '/profile': typeof ProfileIndexRoute
+  '/rides': typeof RidesIndexRoute
+  '/routes': typeof RoutesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/dashboard': typeof DashboardRoute
+  '/help': typeof HelpRoute
+  '/login': typeof LoginRoute
+  '/press': typeof PressRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
+  '/blog/$blogId': typeof BlogBlogIdRoute
+  '/gear/$gearId': typeof GearGearIdRoute
+  '/routes/$routeId': typeof RoutesRouteIdRoute
+  '/community/': typeof CommunityIndexRoute
+  '/gear/': typeof GearIndexRoute
+  '/profile/': typeof ProfileIndexRoute
+  '/rides/': typeof RidesIndexRoute
+  '/routes/': typeof RoutesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/careers'
+    | '/contact'
+    | '/cookies'
+    | '/dashboard'
+    | '/help'
+    | '/login'
+    | '/press'
+    | '/privacy'
+    | '/signup'
+    | '/terms'
+    | '/blog/$blogId'
+    | '/gear/$gearId'
+    | '/routes/$routeId'
+    | '/community/'
+    | '/gear/'
+    | '/profile/'
+    | '/rides/'
+    | '/routes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/careers'
+    | '/contact'
+    | '/cookies'
+    | '/dashboard'
+    | '/help'
+    | '/login'
+    | '/press'
+    | '/privacy'
+    | '/signup'
+    | '/terms'
+    | '/blog/$blogId'
+    | '/gear/$gearId'
+    | '/routes/$routeId'
+    | '/community'
+    | '/gear'
+    | '/profile'
+    | '/rides'
+    | '/routes'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/careers'
+    | '/contact'
+    | '/cookies'
+    | '/dashboard'
+    | '/help'
+    | '/login'
+    | '/press'
+    | '/privacy'
+    | '/signup'
+    | '/terms'
+    | '/blog/$blogId'
+    | '/gear/$gearId'
+    | '/routes/$routeId'
+    | '/community/'
+    | '/gear/'
+    | '/profile/'
+    | '/rides/'
+    | '/routes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  CareersRoute: typeof CareersRoute
+  ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
+  DashboardRoute: typeof DashboardRoute
+  HelpRoute: typeof HelpRoute
+  LoginRoute: typeof LoginRoute
+  PressRoute: typeof PressRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SignupRoute: typeof SignupRoute
+  TermsRoute: typeof TermsRoute
+  GearGearIdRoute: typeof GearGearIdRoute
+  RoutesRouteIdRoute: typeof RoutesRouteIdRoute
+  CommunityIndexRoute: typeof CommunityIndexRoute
+  GearIndexRoute: typeof GearIndexRoute
+  ProfileIndexRoute: typeof ProfileIndexRoute
+  RidesIndexRoute: typeof RidesIndexRoute
+  RoutesIndexRoute: typeof RoutesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +311,180 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/press': {
+      id: '/press'
+      path: '/press'
+      fullPath: '/press'
+      preLoaderRoute: typeof PressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$blogId': {
+      id: '/blog/$blogId'
+      path: '/$blogId'
+      fullPath: '/blog/$blogId'
+      preLoaderRoute: typeof BlogBlogIdRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/community/': {
+      id: '/community/'
+      path: '/community'
+      fullPath: '/community/'
+      preLoaderRoute: typeof CommunityIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gear/': {
+      id: '/gear/'
+      path: '/gear'
+      fullPath: '/gear/'
+      preLoaderRoute: typeof GearIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gear/$gearId': {
+      id: '/gear/$gearId'
+      path: '/gear/$gearId'
+      fullPath: '/gear/$gearId'
+      preLoaderRoute: typeof GearGearIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile/': {
+      id: '/profile/'
+      path: '/profile'
+      fullPath: '/profile/'
+      preLoaderRoute: typeof ProfileIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rides/': {
+      id: '/rides/'
+      path: '/rides'
+      fullPath: '/rides/'
+      preLoaderRoute: typeof RidesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/routes/': {
+      id: '/routes/'
+      path: '/routes'
+      fullPath: '/routes/'
+      preLoaderRoute: typeof RoutesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/routes/$routeId': {
+      id: '/routes/$routeId'
+      path: '/routes/$routeId'
+      fullPath: '/routes/$routeId'
+      preLoaderRoute: typeof RoutesRouteIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface BlogRouteChildren {
+  BlogBlogIdRoute: typeof BlogBlogIdRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogBlogIdRoute: BlogBlogIdRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BlogRoute: BlogRouteWithChildren,
+  CareersRoute: CareersRoute,
+  ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
+  DashboardRoute: DashboardRoute,
+  HelpRoute: HelpRoute,
+  LoginRoute: LoginRoute,
+  PressRoute: PressRoute,
+  PrivacyRoute: PrivacyRoute,
+  SignupRoute: SignupRoute,
+  TermsRoute: TermsRoute,
+  GearGearIdRoute: GearGearIdRoute,
+  RoutesRouteIdRoute: RoutesRouteIdRoute,
+  CommunityIndexRoute: CommunityIndexRoute,
+  GearIndexRoute: GearIndexRoute,
+  ProfileIndexRoute: ProfileIndexRoute,
+  RidesIndexRoute: RidesIndexRoute,
+  RoutesIndexRoute: RoutesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

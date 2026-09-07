@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type User = {
   name: string;
@@ -55,7 +63,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signIn = useCallback(
     (email: string, name?: string) => {
-      const derived = name?.trim() || email.split("@")[0]!.replace(/[._-]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+      const derived =
+        name?.trim() ||
+        email
+          .split("@")[0]!
+          .replace(/[._-]+/g, " ")
+          .replace(/\b\w/g, (c) => c.toUpperCase());
       return persist({
         name: derived,
         email,
@@ -76,9 +89,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch {
       /* ignore */
     }
+    window.location.href = "/login";
   }, []);
 
-  const value = useMemo<AuthState>(() => ({ user, ready, signIn, signUp, signOut }), [user, ready, signIn, signUp, signOut]);
+  const value = useMemo<AuthState>(
+    () => ({ user, ready, signIn, signUp, signOut }),
+    [user, ready, signIn, signUp, signOut],
+  );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

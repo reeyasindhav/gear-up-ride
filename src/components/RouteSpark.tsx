@@ -7,14 +7,30 @@ type Props = {
   variant?: "solid" | "dashed";
   showMarker?: boolean;
   grid?: boolean;
+  style?: React.CSSProperties;
 };
 
 const PATH = "M8 78 C 26 78, 34 40, 52 38 C 70 36, 74 66, 92 68 C 112 70, 118 22, 152 14";
 
 /** Decorative elevation/route trace used across cards and map panels. */
-export function RouteSpark({ tone = "mint", className, variant = "dashed", showMarker = false, grid = false }: Props) {
+export function RouteSpark({
+  tone = "mint",
+  className,
+  variant = "dashed",
+  showMarker = false,
+  grid = false,
+  style,
+}: Props) {
   return (
-    <div className={cn("relative overflow-hidden rounded-xl", toneClass[tone], grid && "map-grid", className)}>
+    <div
+      className={cn(
+        "relative overflow-hidden rounded-xl",
+        toneClass[tone],
+        grid && "map-grid",
+        className,
+      )}
+      style={style}
+    >
       <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:12px_12px] text-primary/25" />
       <svg viewBox="0 0 160 92" preserveAspectRatio="none" className="relative h-full w-full">
         <path
@@ -25,16 +41,35 @@ export function RouteSpark({ tone = "mint", className, variant = "dashed", showM
           strokeWidth="2.2"
           strokeLinecap="round"
           strokeDasharray={variant === "dashed" ? "6 6" : "1400"}
-          style={{ strokeDashoffset: variant === "dashed" ? undefined : 1400, animation: "draw 2.2s ease-in-out both" }}
+          style={{
+            strokeDashoffset: variant === "dashed" ? undefined : 1400,
+            animation: "draw 2.2s ease-in-out both",
+          }}
         />
-        {showMarker && <circle cx="118" cy="34" r="3" fill="none" stroke="currentColor" className="text-primary/70" strokeWidth="1.6" />}
+        {showMarker && (
+          <circle
+            cx="118"
+            cy="34"
+            r="3"
+            fill="none"
+            stroke="currentColor"
+            className="text-primary/70"
+            strokeWidth="1.6"
+          />
+        )}
       </svg>
     </div>
   );
 }
 
 /** Large hero map illustration with animated trace. */
-export function MapCanvas({ className, children }: { className?: string; children?: React.ReactNode }) {
+export function MapCanvas({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) {
   return (
     <div className={cn("relative overflow-hidden rounded-3xl bg-accent map-grid", className)}>
       <div className="absolute inset-0">

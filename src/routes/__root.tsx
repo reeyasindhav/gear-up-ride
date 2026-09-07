@@ -47,7 +47,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">This page didn't load</h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          This page didn't load
+        </h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -81,11 +83,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Gearshift — Routes, gear and riding community" },
       {
         name: "description",
-        content: "Gearshift brings route discovery, honest gear reviews, ride tracking and local cycling clubs into one place.",
+        content:
+          "Gearshift brings route discovery, honest gear reviews, ride tracking and local cycling clubs into one place.",
       },
       { name: "author", content: "Gearshift" },
       { property: "og:title", content: "Gearshift — Routes, gear and riding community" },
-      { property: "og:description", content: "One place for safe routes, honest gear reviews, ride tracking and local clubs." },
+      {
+        property: "og:description",
+        content: "One place for safe routes, honest gear reviews, ride tracking and local clubs.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
